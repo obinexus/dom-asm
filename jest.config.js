@@ -17,7 +17,7 @@ module.exports = {
     }
   },
   moduleNameMapper: {
-    // Legacy support (to be deprecated)
+    // Legacy support (to be deprecated after HTML pipeline migration)
     '^@/(.*)$': '<rootDir>/src/$1',
     
     // Domain-specific path mappings for strict separation of concerns
@@ -41,7 +41,7 @@ module.exports = {
       tsconfig: 'tsconfig.json'
     }
   },
-  // Domain-specific test pattern matching
+  // HTML Pipeline specific test configuration
   projects: [
     {
       displayName: 'HTML Pipeline Tests',
@@ -65,5 +65,11 @@ module.exports = {
       displayName: 'Integration Tests',
       testMatch: ['<rootDir>/test/integration/**/*.test.ts']
     }
-  ]
+  ],
+  // Performance and timeout configuration for complex HTML processing tests
+  testTimeout: 10000,
+  maxWorkers: '50%',
+  // Coverage reporting configuration
+  coverageReporters: ['text', 'lcov', 'html'],
+  coverageDirectory: 'coverage'
 };

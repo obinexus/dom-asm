@@ -1,5 +1,5 @@
 {
-    "name": "@obinexuscomputing/dom-asm",
+    "name": "@obinexus/dom-asm",
     "version": "0.1.0",
     "description": "A high-performance DOM manipulation library using AST-based state tracking and automaton state minimization for efficient diffing and patching",
     "main": "dist/domasm.js",
